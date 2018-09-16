@@ -8,13 +8,14 @@ namespace Seguros.Models
 {
     public class SegurosContext : DbContext
     {
-        public SegurosContext() 
-        
+        public SegurosContext()
+
             : base("name=SegurosContext")
         {
             //base.Configuration.ProxyCreationEnabled = false;
         }
-        
+
         public DbSet<Seguro> Seguros { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

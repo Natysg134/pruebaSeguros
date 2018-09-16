@@ -7,10 +7,12 @@ using System.Web.Http;using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Seguros.Models;
 
+
 namespace Seguros.Controllers
 {
     public class SegurosController : ApiController
     {
+
         private SegurosContext db = new SegurosContext();
 
         private static List<string> abc = new List<string> { "a", "b", "c" };
