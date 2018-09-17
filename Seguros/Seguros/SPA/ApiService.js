@@ -19,4 +19,24 @@
                 }
             );
     }
+
+
+    this.PostApicall = function (controllerName, method, obj, callback) {
+        result = $http.post('api/' + controllerName + '/' + method, obj).then(function (response) {
+            return response.data;
+        });
+    }
+
+    this.PutApicall = function (controllerName, method, obj, callback) {
+        result = $http.put('api/' + controllerName + '/' + method, obj).then(function (response) {
+            callback( response.data);
+        });
+    }
+
+    this.DeleteApicall = function (controllerName, method, obj) {
+        result = $http.delete('api/' + controllerName + '/' + obj).then(function (response) {
+            return response.data;
+        });
+    }
+
 }

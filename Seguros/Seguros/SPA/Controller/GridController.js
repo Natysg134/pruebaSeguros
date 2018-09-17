@@ -1,60 +1,60 @@
-﻿var GridController = function ($scope, $uibModal, $log) {
-    $scope.data = {
-        lowstockdata: {
-            totalitems: 726,
-            currentPage: 1,
-            itemsperpage: 10,
-            data: []
+﻿var GridController = function ($scope, $uibModal, $log, Api) {
+    $scope.datos = {
+        seguros: {
+            totalitems: 0,
+            paginaActual: 1,
+            itemsporpagina: 10,
+            datos: []
         }
     };
 
-    function GetData() {
-        $scope.data.lowstockdata.data = [];
-        for (i = 0; i < $scope.data.lowstockdata.itemsperpage; i++) {
 
-            var currentLocation = $scope.selectedLocation.Nombre;
-            var rndNum = ($scope.data.lowstockdata.currentPage * 10) + i;
-
-            $scope.data.lowstockdata.data.push({
-                SKU: "SKU" + rndNum,
-                ProductTitle: "Product Title " + rndNum,
-                OnOrder: rndNum * 2,
-                Due: rndNum - 1,
-                StockLevel: rndNum,
-                Location: currentLocation
-            });
-        }
+    function GetSeguros() {
+        Api.GetApiCall("Seguros", "GetSeguros", function (event) {
+            if (event.hasErrors == true) {
+                $scope.setError(event.error);
+            } else {
+                $scope.datos.seguros.datos = event.result;             
+            }
+        });
     }
 
-    GetData();
+    GetSeguros();
 
-    $scope.pageChanged = function () {
-        GetData();
-    }
 
-    $scope.$watch('selectedLocation', function () {
-        $scope.data.lowstockdata.currentPage = 1;
-        GetData();
-    });
 
-    $scope.openProduct = function (product) {
+    $scope.abrirSeguro = function (seguro) {
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: '/SPA/Views/ViewProductWindow.html',
-            controller: 'ViewProductController',
+            templateUrl: '/SPA/Views/EditarSeguro.html',
+            controller: 'EditarSeguroController',
             size: "",
             resolve: {
-                data: product
+                data: seguro
             }
         });
 
-        modalInstance.result.then(function (selectedItem) {
-            $scope.data.lowstockdata.selectedItem = selectedItem;
-        }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
-        });
     }
+
+    $scope.crearSeguro = function (seguro) {
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: '/SPA/Views/CrearSeguro.html',
+            controller: 'CrearSeguroController',
+            size: "",
+            resolve: {
+                data: seguro
+            }
+        });
+
+    }
+
+    $scope.DeleteApicall = function (Id) {
+        Api.DeleteApicall("Seguros", "Delete", Id, function (event) {
+            return event;
+        });
+    };
 
 }
 
-GridController.$inject = ['$scope', '$uibModal', '$log'];
+GridController.$inject = ['$scope', '$uibModal', '$log', 'Api'];

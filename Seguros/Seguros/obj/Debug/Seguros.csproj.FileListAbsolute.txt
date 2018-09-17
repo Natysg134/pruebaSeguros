@@ -1,3 +1,7 @@
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\xunit.runner.visualstudio.testadapter.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\xunit.runner.reporters.net452.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\xunit.runner.utility.net452.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\xunit.abstractions.dll
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\Seguros.dll.config
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\Seguros.dll
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\bin\Seguros.pdb
@@ -86,4 +90,8 @@ C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.csproj.Co
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.csproj.CopyComplete
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.dll
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.pdb
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Clientes.resources
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.csprojAssemblyReference.cache
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Llaves.resources
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.fkseguros.resources
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Descripcionenseguros.resources

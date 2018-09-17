@@ -15,12 +15,23 @@ namespace Seguros.Controllers
 
         private SegurosContext db = new SegurosContext();
 
-        private static List<string> abc = new List<string> { "a", "b", "c" };
 
         [HttpGet]
-        public IEnumerable<Seguro> GetLetters()
+        public IEnumerable<Seguro> GetSeguros()
         {
             return db.Seguros.AsEnumerable();
+        }
+
+        [HttpGet]
+        public IEnumerable<TipoRiesgo> GetTipoRiesgos()
+        {
+            return db.TipoRiesgos.AsEnumerable();
+        }
+
+        [HttpGet]
+        public IEnumerable<Cliente> GetClientes()
+        {
+            return db.Clientes.AsEnumerable();
         }
 
         [HttpPost]
@@ -31,7 +42,7 @@ namespace Seguros.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);              
             }
 
-            if (Seguro.TipoRiesgo == "alto" && Seguro.Cobertura > 50)
+            if (Seguro.Riesgo == 1 && Seguro.Cobertura > 50)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Tipo de Riesgo Alto, cobertura debe ser menor a 50");
             }
@@ -61,13 +72,13 @@ namespace Seguros.Controllers
                     return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
 
-                if (Seguro.TipoRiesgo == "alto" && Seguro.Cobertura > 50)
+                if (Seguro.Riesgo == 4 && Seguro.Cobertura > 50)
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Tipo de Riesgo Alto, cobertura debe ser menor a 50");
                 }
 
-                resultado = Seguro;
-                db.Entry(resultado).State = EntityState.Modified;
+
+                db.Entry(resultado).CurrentValues.SetValues(Seguro);
 
                 try
                 {
@@ -111,7 +122,6 @@ namespace Seguros.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, Seguro);
 
         }
-
 
 
         

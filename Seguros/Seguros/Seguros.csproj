@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -123,18 +124,22 @@
     <Content Include="css\angular-chart.min.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\loadingoverlay.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-1.1.2.min.js" />
     <Content Include="SPA\App.js" />
     <Content Include="SPA\ApiService.js" />
+    <Content Include="SPA\Controller\CrearSeguroController.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
-    <Content Include="SPA\Controller\ViewProductController.js" />
+    <Content Include="SPA\Controller\EditarSeguroController.js" />
+    <Content Include="SPA\Views\CrearSeguro.html" />
     <Content Include="SPA\Views\Grid.html" />
-    <Content Include="SPA\Views\ViewProductWindow.html" />
+    <Content Include="SPA\Views\EditarSeguro.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -157,14 +162,36 @@
     <Compile Include="Migrations\201809160458046_Usarios.Designer.cs">
       <DependentUpon>201809160458046_Usarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809170706567_Clientes.cs" />
+    <Compile Include="Migrations\201809170706567_Clientes.Designer.cs">
+      <DependentUpon>201809170706567_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809170758089_Llaves.cs" />
+    <Compile Include="Migrations\201809170758089_Llaves.Designer.cs">
+      <DependentUpon>201809170758089_Llaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809170806387_fk seguros.cs" />
+    <Compile Include="Migrations\201809170806387_fk seguros.Designer.cs">
+      <DependentUpon>201809170806387_fk seguros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809171423462_Descripcion en seguros.cs" />
+    <Compile Include="Migrations\201809171423462_Descripcion en seguros.Designer.cs">
+      <DependentUpon>201809171423462_Descripcion en seguros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Seguro.cs" />
     <Compile Include="Models\SegurosContext.cs" />
+    <Compile Include="Models\TipoRiesgo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -183,6 +210,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809160458046_Usarios.resx">
       <DependentUpon>201809160458046_Usarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809170706567_Clientes.resx">
+      <DependentUpon>201809170706567_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809170758089_Llaves.resx">
+      <DependentUpon>201809170758089_Llaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809170806387_fk seguros.resx">
+      <DependentUpon>201809170806387_fk seguros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171423462_Descripcion en seguros.resx">
+      <DependentUpon>201809171423462_Descripcion en seguros.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +258,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

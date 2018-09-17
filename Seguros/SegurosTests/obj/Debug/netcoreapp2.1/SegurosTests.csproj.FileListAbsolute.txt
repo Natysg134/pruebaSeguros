@@ -1,0 +1,14 @@
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\SegurosTests.deps.json
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\SegurosTests.runtimeconfig.json
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\SegurosTests.runtimeconfig.dev.json
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\SegurosTests.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\bin\Debug\netcoreapp2.1\SegurosTests.pdb
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.csprojAssemblyReference.cache
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.csproj.CoreCompileInputs.cache
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.AssemblyInfoInputs.cache
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.AssemblyInfo.cs
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.dll
+C:\Users\natys\Desktop\pruebaSeguros\Seguros\SegurosTests\obj\Debug\netcoreapp2.1\SegurosTests.pdb

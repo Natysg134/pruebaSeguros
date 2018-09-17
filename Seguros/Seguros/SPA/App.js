@@ -4,7 +4,8 @@ App.service('Api', ['$http', ApiService]);
 
 App.controller('MainController', MainController);
 App.controller('GridController', GridController);
-App.controller('ViewProductController', ViewProductController);
+App.controller('EditarSeguroController', EditarSeguroController);
+App.controller('CrearSeguroController', CrearSeguroController);
 
 var configFunction = function ($routeProvider, $httpProvider) {
     $routeProvider.
