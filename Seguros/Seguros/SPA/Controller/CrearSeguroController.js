@@ -8,7 +8,7 @@
         Meses: "",
         Precio: "",
         Riesgo: "",
-        Cliente: "",
+        ClienteAsociado: "",
     };
     $scope.TipoRiesgos = null;
 
@@ -25,9 +25,15 @@
 
 
     $scope.PostSeguro = function () {
-        Api.PostApicall("Seguros", "Post", $scope.Seguro, function (event) {
- 
-        });
+        if ($scope.Seguro.Riesgo == 4 && $scope.Seguro.Cobertura > 50) {
+            alert("Tipo de Riesgo Alto, cobertura no puede ser mayor a 50");
+        }
+        else {
+            Api.PostApicall("Seguros", "Post", $scope.Seguro, function (event) {
+                $uibModalInstance.dismiss('cancel');
+                location.reload();
+            });
+        }
     };
 
     function GetTipoRiesgo() {

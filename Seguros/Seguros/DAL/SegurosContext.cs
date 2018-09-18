@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using Seguros.Models;
 
-namespace Seguros.Models
+namespace Seguros.DAL
 {
     public class SegurosContext : DbContext
     {
-        public SegurosContext()
-
-            : base("name=SegurosContext")
+        public SegurosContext(): base("name=SegurosContext")
         {
             //base.Configuration.ProxyCreationEnabled = false;
 
@@ -28,5 +27,6 @@ namespace Seguros.Models
                 .Where(p => p.Name == "Id")
                 .Configure(p => p.IsKey());
         }
+
     }
 }

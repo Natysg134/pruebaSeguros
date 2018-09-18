@@ -6,14 +6,14 @@ namespace Seguros.Migrations
     using System.Linq;
     using Seguros.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Seguros.Models.SegurosContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Seguros.DAL.SegurosContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Seguros.Models.SegurosContext context)
+        protected override void Seed(Seguros.DAL.SegurosContext context)
         {
 
             context.TipoRiesgos.AddOrUpdate(T => T.Id,

@@ -37,10 +37,16 @@
     }
 
     $scope.PutSeguro = function () {
-        Api.PutApicall("Seguros", "Put", $scope.Seguro, function (event) {
-            
-        });
-        GetClientes();
+        if ($scope.Seguro.Riesgo == 4 && $scope.Seguro.Cobertura > 50) {
+            alert("Tipo de Riesgo Alto, cobertura no puede ser mayor a 50");
+        }
+        else {
+            Api.PutApicall("Seguros", "Put", $scope.Seguro, function (event) {
+                $uibModalInstance.dismiss('cancel');
+                location.reload();
+            });
+            GetClientes();
+        }
     };
 
     $scope.setRiesgoDefinido = function (id) {

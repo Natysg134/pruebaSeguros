@@ -51,7 +51,7 @@
 
     $scope.DeleteApicall = function (Id) {
         Api.DeleteApicall("Seguros", "Delete", Id, function (event) {
-            return event;
+            location.reload();
         });
     };
 

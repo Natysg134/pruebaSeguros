@@ -91,7 +91,6 @@ C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.csproj.Co
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.dll
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.pdb
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Clientes.resources
-C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.csprojAssemblyReference.cache
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Llaves.resources
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.fkseguros.resources
 C:\Users\natys\Desktop\pruebaSeguros\Seguros\Seguros\obj\Debug\Seguros.Migrations.Descripcionenseguros.resources

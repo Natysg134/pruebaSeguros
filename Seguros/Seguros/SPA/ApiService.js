@@ -23,19 +23,19 @@
 
     this.PostApicall = function (controllerName, method, obj, callback) {
         result = $http.post('api/' + controllerName + '/' + method, obj).then(function (response) {
-            return response.data;
+            callback(response);
         });
     }
 
     this.PutApicall = function (controllerName, method, obj, callback) {
         result = $http.put('api/' + controllerName + '/' + method, obj).then(function (response) {
-            callback( response.data);
+            callback( response);
         });
     }
 
-    this.DeleteApicall = function (controllerName, method, obj) {
+    this.DeleteApicall = function (controllerName, method, obj, callback) {
         result = $http.delete('api/' + controllerName + '/' + obj).then(function (response) {
-            return response.data;
+            callback(response);
         });
     }
 

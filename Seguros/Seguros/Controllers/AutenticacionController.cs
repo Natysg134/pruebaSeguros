@@ -5,11 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Seguros.Models;
+using Seguros.DAL;
 
 namespace Seguros.Controllers
 {
     public class AutenticacionController : ApiController
     {
+        //private UnitOfWork db = new UnitOfWork();
         private SegurosContext db = new SegurosContext();
 
         [HttpPost]

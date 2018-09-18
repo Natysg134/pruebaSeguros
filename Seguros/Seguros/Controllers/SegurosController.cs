@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;using System.Data.Entity;
+using System.Web.Http;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Seguros.Models;
+using Seguros.DAL;
 
 
 namespace Seguros.Controllers
 {
     public class SegurosController : ApiController
     {
-
-        private SegurosContext db = new SegurosContext();
+        //private UnitOfWork db = new UnitOfWork();
+       private SegurosContext db = new SegurosContext();
 
 
         [HttpGet]
         public IEnumerable<Seguro> GetSeguros()
         {
+            
             return db.Seguros.AsEnumerable();
         }
 

@@ -151,6 +151,7 @@
     <Compile Include="Controllers\AutenticacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SegurosController.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,8 +181,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="DAL\RepositorioGenerico.cs" />
     <Compile Include="Models\Seguro.cs" />
-    <Compile Include="Models\SegurosContext.cs" />
+    <Compile Include="DAL\SegurosContext.cs" />
     <Compile Include="Models\TipoRiesgo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
