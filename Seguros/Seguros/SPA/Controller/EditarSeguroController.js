@@ -37,7 +37,7 @@
     }
 
     $scope.PutSeguro = function () {
-        if ($scope.Seguro.Riesgo == 4 && $scope.Seguro.Cobertura > 50) {
+        if ($scope.selected.Riesgo == "Alto" && $scope.Seguro.Cobertura > 50) {
             alert("Tipo de Riesgo Alto, cobertura no puede ser mayor a 50");
         }
         else {

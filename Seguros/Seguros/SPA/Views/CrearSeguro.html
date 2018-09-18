@@ -3,7 +3,7 @@
         <div class="modal-header bootstrap-dialog-draggable">
             <div class="bootstrap-dialog-header">
                 <div class="bootstrap-dialog-close-button" style="display: block;">
-                    <button type="button" class="close" ng-click="close()">×</button>
+                   
                 </div>
                 <div class="bootstrap-dialog-title"><H1>Nuevo Seguro</H1></div>
             </div>
@@ -14,6 +14,12 @@
                     <label for="example-text-input" class="col-2 col-form-label">Nombre del Seguro</label>
                     <div class="col-10">
                         <input class="form-control" type="text" ng-model="Seguro.Nombre">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="example-text-input" class="col-2 col-form-label">Descripcion</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" ng-model="Seguro.Descripcion">
                     </div>
                 </div>
                 <div class="form-group">
@@ -48,7 +54,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2 col-form-label">Precio</label>
+                    <label class="col-2 col-form-label">Tipo Riesgo</label>
                     <div class="col-10">
                         <ul>
                             <li class="dropdown">
