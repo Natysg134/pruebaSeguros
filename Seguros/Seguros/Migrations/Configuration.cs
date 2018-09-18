@@ -6,31 +6,32 @@ namespace Seguros.Migrations
     using System.Linq;
     using Seguros.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Seguros.DAL.SegurosContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Seguros.Models.SegurosContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Seguros.DAL.SegurosContext context)
+        protected override void Seed(Seguros.Models.SegurosContext context)
         {
 
             context.TipoRiesgos.AddOrUpdate(T => T.Id,
-                new TipoRiesgo() { Id=1, Riesgo = "Bajo"},
-                new TipoRiesgo() { Id=2, Riesgo = "Medio" },
-                new TipoRiesgo() { Id=3, Riesgo = "Medio-Alto" },
-                new TipoRiesgo() { Id=4, Riesgo = "Alto" }
+                new TipoRiesgo() { Id = 1, Riesgo = "Bajo" },
+                new TipoRiesgo() { Id = 2, Riesgo = "Medio" },
+                new TipoRiesgo() { Id = 3, Riesgo = "Medio-Alto" },
+                new TipoRiesgo() { Id = 4, Riesgo = "Alto" }
                 );
 
             context.Clientes.AddOrUpdate(C => C.Identificacion,
-                new Cliente() { Nombre = "Juan Lopez", Identificacion = "603450567"},
+                new Cliente() { Nombre = "Juan Lopez", Identificacion = "603450567" },
                 new Cliente() { Nombre = "Carlos Mora", Identificacion = "506740987" },
                 new Cliente() { Nombre = "Luis Gomez", Identificacion = "102360643" }
                 );
 
             context.Seguros.AddOrUpdate(S => S.Id,
-                new Seguro() {
+                new Seguro()
+                {
                     Nombre = "Seguro Prueba1",
                     Descripcion = "Este es un Seguro de Prueba",
                     Cubrimiento = "Terremoto",
@@ -38,11 +39,12 @@ namespace Seguros.Migrations
                     FechaInicio = Convert.ToDateTime("05 / 29 / 2015"),
                     Meses = 12,
                     Precio = 2000,
-                    Riesgo =  context.TipoRiesgos.FirstOrDefault(x => x.Riesgo == "Bajo").Id ,
-                    ClienteAsociado = context.Clientes.FirstOrDefault(x => x.Identificacion == "506740987").Identificacion 
+                    Riesgo = 2,
+                    ClienteAsociado =  "506740987"
                 },
 
-                new Seguro() {
+                new Seguro()
+                {
                     Nombre = "Seguro Prueba2",
                     Descripcion = "Este es un Seguro de Prueba",
                     Cubrimiento = "Incendio",
@@ -50,9 +52,9 @@ namespace Seguros.Migrations
                     FechaInicio = Convert.ToDateTime("06 / 30 / 2016"),
                     Meses = 3,
                     Precio = 2400,
-                    Riesgo = context.TipoRiesgos.FirstOrDefault(x => x.Riesgo == "Alto").Id ,
-                    ClienteAsociado = context.Clientes.FirstOrDefault(x => x.Identificacion == "603450567").Identificacion 
-                }              
+                    Riesgo = 4,
+                    ClienteAsociado = "603450567"
+                }
                 );
 
             context.Usuarios.AddOrUpdate(U => U.Id,

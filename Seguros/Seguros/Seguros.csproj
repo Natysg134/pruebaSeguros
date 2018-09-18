@@ -155,35 +155,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809150952438_Initial.cs" />
-    <Compile Include="Migrations\201809150952438_Initial.Designer.cs">
-      <DependentUpon>201809150952438_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809160458046_Usarios.cs" />
-    <Compile Include="Migrations\201809160458046_Usarios.Designer.cs">
-      <DependentUpon>201809160458046_Usarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809170706567_Clientes.cs" />
-    <Compile Include="Migrations\201809170706567_Clientes.Designer.cs">
-      <DependentUpon>201809170706567_Clientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809170758089_Llaves.cs" />
-    <Compile Include="Migrations\201809170758089_Llaves.Designer.cs">
-      <DependentUpon>201809170758089_Llaves.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809170806387_fk seguros.cs" />
-    <Compile Include="Migrations\201809170806387_fk seguros.Designer.cs">
-      <DependentUpon>201809170806387_fk seguros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809171423462_Descripcion en seguros.cs" />
-    <Compile Include="Migrations\201809171423462_Descripcion en seguros.Designer.cs">
-      <DependentUpon>201809171423462_Descripcion en seguros.cs</DependentUpon>
+    <Compile Include="Migrations\201809180247451_InitialCreate.cs" />
+    <Compile Include="Migrations\201809180247451_InitialCreate.Designer.cs">
+      <DependentUpon>201809180247451_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="DAL\RepositorioGenerico.cs" />
     <Compile Include="Models\Seguro.cs" />
-    <Compile Include="DAL\SegurosContext.cs" />
+    <Compile Include="Models\SegurosContext.cs" />
     <Compile Include="Models\TipoRiesgo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,27 +187,12 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809150952438_Initial.resx">
-      <DependentUpon>201809150952438_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809160458046_Usarios.resx">
-      <DependentUpon>201809160458046_Usarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809170706567_Clientes.resx">
-      <DependentUpon>201809170706567_Clientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809170758089_Llaves.resx">
-      <DependentUpon>201809170758089_Llaves.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809170806387_fk seguros.resx">
-      <DependentUpon>201809170806387_fk seguros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809171423462_Descripcion en seguros.resx">
-      <DependentUpon>201809171423462_Descripcion en seguros.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <EmbeddedResource Include="Migrations\201809180247451_InitialCreate.resx">
+      <DependentUpon>201809180247451_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

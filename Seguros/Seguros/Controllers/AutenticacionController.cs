@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Seguros.Models;
-using Seguros.DAL;
 
 namespace Seguros.Controllers
 {

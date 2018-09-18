@@ -7,7 +7,6 @@ using System.Web.Http;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Seguros.Models;
-using Seguros.DAL;
 
 
 namespace Seguros.Controllers
