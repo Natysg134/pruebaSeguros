@@ -13,7 +13,7 @@
         <tbody>
             <tr ng-repeat="x in datos.seguros.datos">
                 <td><a style="cursor: pointer" ng-click="abrirSeguro(x)">{{x.Nombre }}</a></td>
-                <td><span class="glyphicon glyphicon-trash" ng-click="DeleteApicall(x.Id)"></span></td>
+               <td><button class="btn btn-secondary" ng-click="DeleteApicall(x.Id)"><span class="glyphicon glyphicon-trash"></span>Eliminar Seguro</button></td>-->
             </tr>
         </tbody>
     </table>
